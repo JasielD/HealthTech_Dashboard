@@ -10,7 +10,11 @@ const analyticsRoutes = require('./routes/analyticsRoutes');
 const app = express();
 
 // 1) GLOBAL MIDDLEWARES
-app.use(cors());
+app.use(cors({
+  origin: "https://healthtech-dashboard-1.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
