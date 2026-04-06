@@ -27,7 +27,7 @@ const AdminTrends = () => {
   useEffect(() => {
     const fetchTrends = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/v1/analytics/trends', {
+        const response = await axios.get('https://healthtech-dashboard.onrender.com/api/v1/analytics/trends', {
           headers: { Authorization: `Bearer ${token}` },
         });
 

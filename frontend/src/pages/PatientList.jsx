@@ -19,7 +19,7 @@ const PatientList = () => {
 
   const fetchPatients = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/patients', {
+      const response = await axios.get('https://healthtech-dashboard.onrender.com/api/v1/patients', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPatients(response.data.data.patients);
@@ -37,7 +37,7 @@ const PatientList = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this patient record? This will not delete their encounters, but they will become unlinked.')) {
       try {
-        await axios.delete(`http://localhost:5000/api/v1/patients/${id}`, {
+        await axios.delete(`https://healthtech-dashboard.onrender.com/api/v1/patients/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setPatients(patients.filter((p) => p._id !== id));
@@ -65,7 +65,7 @@ const PatientList = () => {
   const handleUpdate = async (id) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/v1/patients/${id}`,
+        `https://healthtech-dashboard.onrender.com/api/v1/patients/${id}`,
         {
           ...editFormData,
           age: parseInt(editFormData.age),

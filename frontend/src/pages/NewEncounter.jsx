@@ -47,7 +47,7 @@ const NewEncounter = () => {
 
       // 1) Create or update patient
       const patientResponse = await axios.post(
-        'http://localhost:5000/api/v1/patients',
+        'https://healthtech-dashboard.onrender.com/api/v1/patients',
         {
           patientCode: formData.patientCode,
           age: parseInt(formData.age),
@@ -61,7 +61,7 @@ const NewEncounter = () => {
 
       // 2) Create encounter
       await axios.post(
-        'http://localhost:5000/api/v1/encounters',
+        'https://healthtech-dashboard.onrender.com/api/v1/encounters',
         {
           patientId,
           symptoms: formData.symptoms.split(',').map((s) => s.trim()),

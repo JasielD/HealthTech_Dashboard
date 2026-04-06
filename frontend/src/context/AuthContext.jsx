@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/v1/users/login', { email, password });
+      const response = await axios.post('https://healthtech-dashboard.onrender.com/api/v1/users/login', { email, password });
       const { token, data } = response.data;
       
       setToken(token);
@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (name, email, password, role) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/v1/users/signup', { name, email, password, role });
+      const response = await axios.post('https://healthtech-dashboard.onrender.com/api/v1/users/signup', { name, email, password, role });
       const { token, data } = response.data;
       
       setToken(token);
